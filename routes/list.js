@@ -5,7 +5,8 @@ const dyttReptitle = require('dytt-reptitle');
 /* GET users listing. */
 router.get('/:page', function(req, res, next) {
     var config = {
-        page: req.param.page,
+        page: req.params.page * 1,
+        skip: 0,
         include: ['title', 'imgUrl', 'desc', 'downloadLink', 'descPageLink']
     };
     dyttReptitle(config).then(result => {
