@@ -23,7 +23,7 @@ app.all('*', function(req, res, next) {
     else next();
 });
 
-app.use(cors({ credentials: true, origin: 'http://zi-yuan.club/' }));
+app.use(cors({ credentials: true, origin: 'http://zi-yuan.club' }));
 
 app.use('/', indexRouter);
 app.use('/getList', listRouter);
