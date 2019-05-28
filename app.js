@@ -7,13 +7,6 @@ var indexRouter = require('./routes/index');
 var listRouter = require('./routes/list');
 
 var app = express();
-
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-
 app.all('*', function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Content-Type,Content-Length, Authorization, Accept,X-Requested-With");
@@ -23,8 +16,17 @@ app.all('*', function(req, res, next) {
     else next();
 });
 
-app.use(cors({ credentials: true, origin: 'http://zi-yuan.club' }));
-app.use(cors({ credentials: true, origin: 'http://www.zi-yuan.club' }));
+
+
+app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
+
+
+// app.use(cors({ credentials: true, origin: 'http://zi-yuan.club' }));
+// app.use(cors({ credentials: true, origin: 'http://www.zi-yuan.club' }));
 
 app.use('/', indexRouter);
 app.use('/getList', listRouter);
