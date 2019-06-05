@@ -5,14 +5,14 @@ var mysql = require('mysql');
 var connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'A1140910124',
+    password: '1',
     database: 'DATALIST'
 });
 
 connection.connect();
 
 function UpdateDataBase() {
-    var sql = `DELETE FROM DATALIST`;
+    var sql = `DELETE FROM dataList`;
     connection.query(sql, 1, (error, results, fields) => {
         if (error)
             return console.error(error.message);
