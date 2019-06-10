@@ -17,7 +17,7 @@ function UpdateDataBase() {
         if (error)
             return console.error(error.message);
 
-        console.log('清除数据');
+        console.log('clear data');
 
         var config = {
             page: 1,
@@ -30,7 +30,7 @@ function UpdateDataBase() {
             var values = dealData(result);
             connection.query(addSql, [values], function(err, result) {
                 if (err) throw err;
-                console.log('重置数据');
+                console.log('reset data');
             });
         });
     });
