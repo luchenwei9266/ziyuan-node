@@ -13,7 +13,7 @@ connection.connect();
 
 function UpdateDataBase() {
     var sql = `DELETE FROM dataList`;
-    connection.query(sql, 1, (error, results, fields) => {
+    connection.query(sql, (error, results, fields) => {
         if (error)
             return console.error(error.message);
 
