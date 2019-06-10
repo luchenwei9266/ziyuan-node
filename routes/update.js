@@ -44,4 +44,4 @@ function dealData(data) {
     return result;
 }
 
-module.exports = UpdateDataBase();
+module.exports = UpdateDataBase;
