@@ -33,7 +33,6 @@ function UpdateDataBase() {
                 console.log('重置数据');
             });
         });
-
     });
 }
 
@@ -45,4 +44,4 @@ function dealData(data) {
     return result;
 }
 
-module.exports = UpdateDataBase;
+module.exports = UpdateDataBase();

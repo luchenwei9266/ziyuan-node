@@ -16,7 +16,6 @@ router.get('/', function(req, res, next) {
     var sql = 'SELECT * FROM dataList';
     connection.query(sql, function(err, result) {
         if (err) throw err;
-        console.log(result);
         res.send(result);
     });
 });
