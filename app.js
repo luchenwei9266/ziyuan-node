@@ -10,7 +10,7 @@ var Upate = require('./routes/update');
 const schedule = require('node-schedule');
 
 var app = express();
-Upate();
+// Upate();
 scheduleCronstyle();
 app.all('*', function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -29,7 +29,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/getList', listRouter);
 app.use('/getBase', BaseRouter);
-app.use('/test', TestRouter)
+app.use('/test', TestRouter);
+app.use('/update', Upate());
 
 function scheduleCronstyle() {
     schedule.scheduleJob('* 1 * * * *', function() {
