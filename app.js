@@ -2,10 +2,10 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var cors = require("cors")
-var indexRouter = require('./routes/index');
+var cors = require("cors");
 var listRouter = require('./routes/list');
 var BaseRouter = require('./routes/getList');
+var TestRouter = require('./routes/test');
 var Upate = require('./routes/update');
 const schedule = require('node-schedule');
 
@@ -27,9 +27,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
 app.use('/getList', listRouter);
 app.use('/getBase', BaseRouter);
+app.use('/test', TestRouter)
 
 function scheduleCronstyle() {
     schedule.scheduleJob('* 1 * * * *', function() {

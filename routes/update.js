@@ -25,14 +25,17 @@ function UpdateDataBase() {
             include: ['title', 'imgUrl', 'desc', 'downloadLink', 'descPageLink']
         };
 
-        dyttReptitle(config).then(result => {
-            var addSql = 'INSERT INTO dataList(title,imgUrl,`desc`,downloadLink,descPageLink) VALUES ?';
-            var values = dealData(result);
-            connection.query(addSql, [values], function(err, result) {
-                if (err) throw err;
-                console.log('reset data');
+        setTimeout(function() {
+            dyttReptitle(config).then(result => {
+                var addSql = 'INSERT INTO dataList(title,imgUrl,`desc`,downloadLink,descPageLink) VALUES ?';
+                var values = dealData(result);
+                connection.query(addSql, [values], function(err, result) {
+                    if (err) throw err;
+                    console.log('reset data');
+                });
             });
-        });
+        }, 1500);
+
     });
 }
 
