@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-const dyttReptitle = require('dytt-reptitle');
+const dyttReptitle = require('dytt-reptitle-v2');
 
 /* GET users listing. */
 router.get('/:page/:skip', function(req, res, next) {

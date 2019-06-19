@@ -1,5 +1,5 @@
 var express = require('express');
-const dyttReptitle = require('dytt-reptitle');
+const dyttReptitle = require('dytt-reptitle-v2');
 
 var mysql = require('mysql');
 var connection = mysql.createConnection({
