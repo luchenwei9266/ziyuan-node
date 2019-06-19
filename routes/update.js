@@ -34,7 +34,7 @@ function UpdateDataBase() {
                     console.log('reset data');
                 });
             });
-        }, 1500);
+        }, 2000);
 
     });
 }
